@@ -4,12 +4,12 @@
 	@include media-breakpoint-up(md) {
 
 		--sPT: #{rem(61)};
-		--sPB: #{rem(30)};
+		--sPB: #{rem(0)};
 		--sTPB: #{rem(18)};
 	}
 
 	--sPT: #{rem(34)};
-	--sPB: #{rem(34)};
+	--sPB: #{rem(0)};
 	--sTPB: #{rem(12)};
 
 
