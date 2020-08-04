@@ -1,0 +1,32 @@
+mixin sAbout()
+	// start sAbout
+	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Что же такое ROBOSCHOOL?
+			p Сегодня&nbsp;&mdash; это школа робототехники и&nbsp;программирования, в&nbsp;которой Ваш ребёнок в&nbsp;ненавязчивой форме, проходит знакомство с&nbsp;физикой, математикой, программированием, устройством компьютера в&nbsp;игровой форме, начиная уже с&nbsp;первого класса, учится собирать и&nbsp;программировать специальные модели роботов из&nbsp;элементов конструктора Lego, а&nbsp;также получает начальные знания программирования, на&nbsp;таких языках, как Scratch, Ev3, Python. Обучение для ребят проходит в&nbsp;небольших группах до&nbsp;12&nbsp;человек.
+		+b.sliderAbout
+			.swiper-container.sliderAbout-js
+				.swiper-wrapper
+					mixin slide(i)
+						.swiper-slide
+							+e.slide
+								if block
+									block
+								else
+									picture
+										source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/about-${i}.webp` type="image/webp")
+										img.swiper-lazy(src="#" data-src=`img/@2x/about-${i}.jpg`, alt="") 
+					+slide
+						<iframe src="https://www.youtube.com/embed/1il2vq7-KIs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					+slide('2')
+					+slide('1')
+					+slide('2')
+					+slide
+						<iframe src="https://www.youtube.com/embed/1il2vq7-KIs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					+slide('1')
+				+e.buttons
+					+e.btn(href="#") Посмотреть адреса
+					+e.btn(href="#") Наши педагоги
+					+e.btn(href="#") Доступные занятия
+	// end sAbout

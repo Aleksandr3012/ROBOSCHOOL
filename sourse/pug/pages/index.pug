@@ -1,0 +1,65 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sCourses/_sCourses.pug
+include ../blocks/sAdvantages/_sAdvantages.pug
+include ../blocks/sPhoto/_sPhoto.pug
+include ../blocks/sTeachers/_sTeachers.pug
+include ../blocks/sAchievements/_sAchievements.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sQuestions/_sQuestions.pug
+include ../blocks/sNews/_sNews.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'ROBOSCHOOL'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+
+		+topLine()
+		+top-nav()
+	+headerBlock()
+	+sAbout()
+	+sCourses()
+	+sAdvantages()
+	+sForm()
+	+sPhoto()
+	+sTeachers()
+	+sAchievements()
+	+sReviews()
+	+sQuestions()
+	+sNews()
+	+sContact()
+
+	.container
+		a.link-modal(href="#modal-call" data-title="title"  data-text="text  sadasdasd" data-btn="btn sdasdsa" data-order="order  ddfs") modal-call
+		a.link-modal(href="#modal-call" data-title="title  111"  data-text="text  sadasdasd" data-btn="btn sdasdsa" data-order="order  ddfs") modal-call
+		+b.tabs
+			+e.caption
+				+e.btn.btn.btn-primary.active btn 1
+				+e.btn.btn.btn-primary btn 2
+				+e.btn.btn.btn-primary btn 3
+			div
+				+e.content.active  content 1
+				+e.content content 2
+				+e.content content 3
+		+b.tabs
+			+e.caption
+				+e.btn.btn.btn-primary.active btn 1
+				+e.btn.btn.btn-primary btn 2
+				+e.btn.btn.btn-primary btn 3
+			div
+				+e.content.active  content 1
+				+e.content content 2
+				+e.content content 3
+		
+	+footer()
+
+
+	

@@ -1,0 +1,22 @@
+mixin topLine()
+	// start topLine
+	+b.topLine#topLine&attributes(attributes)
+		.container
+			.row.justify-content-between
+				.col-auto
+					+e.logo(href="#")
+						img(src="img/@2x/logo.png", alt="")
+						+e.logoText
+							+e.name ROBOSCHOOL
+							+e.logoDescr Школа программирования и робототехники
+				+e.col.col.text-right.align-self-center
+					+e.item
+						+e.itemText Пн-Пт: 09:00-18:00
+						+e.itemLink(href="mailto:info@roboschool.pro") info@roboschool.pro
+					+e.item
+						+e.itemText г. Санкт-Петербург
+						+e.itemLink(href='#') Все филиалы
+					+e.item
+						+e.itemText(href="tel:+78125021085") +7 (812) 502-10-85
+						+e.itemLink.link-modal(href="#modal-call") Заказать звонок
+	// end topLine
