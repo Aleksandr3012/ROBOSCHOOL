@@ -99,6 +99,22 @@ const JSCCommon = {
 	},
 	// /mobileMenu
 
+	// // кастомный селлект
+	// select2() {
+	// 	$(".custom-select-wrap").each(function () {
+	// 		var th = $(this)
+	// 		th.find('.custom-select-js').select2({
+	// 			dropdownParent: th,
+	// 			tags: true,
+	// 			minimumResultsForSearch: -1,
+	// 			// width: 'auto',
+	// 			// width: th.find(".select2-results__options"),
+	// 			allowClear: false,
+	// 			// dropdownAutoWidth: true
+	// 		});
+	// 	})
+	// },
+
 	// табы  .
 	tabscostume(tab) {
 
@@ -226,7 +242,7 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
-
+	// JSCCommon.select2();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	let screenName;
@@ -291,6 +307,35 @@ function eventHandler() {
 		lazy: {
 			loadPrevNext: true,
 			loadPrevNextAmount: 2,
+		},
+	});
+
+	let coursesSlider = new Swiper('.coursesSlider-js', {
+		slidesPerView: 1,
+		loop: true,
+		// autoHeight: true,
+		spaceBetween: 20,
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 2,
+		},
+		navigation: {
+			nextEl: '.coursesSlider-next',
+			// prevEl: '.headerSlider-prev',
+		},
+		breakpoints: { 
+			576: { 
+				slidesPerView: 2,
+			},
+			
+			992: { 
+				slidesPerView: 3,
+			},
+
+			1200: {
+				slidesPerView: 4,
+			}
 		},
 	});
 

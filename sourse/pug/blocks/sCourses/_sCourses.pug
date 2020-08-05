@@ -6,5 +6,42 @@ mixin sCourses()
 				h2 Образовательные курсы
 				a(href="#") Все курсы
 			p На&nbsp;сегодняшний день мы&nbsp;предлагаем Вам два направления обучения: робототехника и&nbsp;программирование. Помимо полноценных годовых курсов, можно опробовать пятидневные интенсивы, программы которых не&nbsp;повторяют содержание основных занятий Школы робототехники и&nbsp;программирования ROBOSCHOOL. Они будут интересны как уже опытным робототехникам, так и&nbsp;новичкам!
-			.row
+			+e.filter
+				+e.text Фильтровать курсы по возрасту:
+				+b.select-group
+					.select-wrap
+						select.form-control(name="age")
+							option(value="" selected disabled) Любой возраст
+							option(value="75B") 6–8 лет
+							option(value="75C") 8-10 лет
+							option(value="80B") 10–12 лет
+							option(value="80C") 12-15 лет
+				+e.filterResult Результатов:
+					span 13
+
+		+b.coursesSlider
+			.swiper-container.coursesSlider-js
+				.coursesSlider-next
+					img(src="img/@2x/chevron-right.png", alt="")
+				.swiper-wrapper
+					mixin slide(img,category,age,title)
+						.swiper-slide
+							+e.slide
+								+e.imgWrap
+									picture
+										source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/courses-${img}.webp` type="image/webp")
+										img.swiper-lazy(src="#" data-src=`img/@2x/about-${img}.jpg`, alt="")
+								+e.slideBody
+									+e.topLine
+										+e.category(href="#")= category
+										+e.age= age
+									+e.title= title
+									+e.condition Запись открыта
+									+e.details Подробнее
+										img(src="img/@2x/arrow-r.png", alt="")
+					+slide('1','Робототехника','10–12 лет','Виртуальная робототехника для детей 10 лет')
+					+slide('2','Программирование','6–8 лет','Онлайн курс Scratch для детей')
+					+slide('3','Робототехника','6–8 лет','Робототехника на Lego WeDo 2.0 детям от 6 лет')
+					+slide('4','Программирование','8-10 лет','Программирование на Scratch детям от 8 лет')
+					+slide('5','Программирование','10-12 лет','Программирование на Python детям от 10 лет')
 	// end sCourses
