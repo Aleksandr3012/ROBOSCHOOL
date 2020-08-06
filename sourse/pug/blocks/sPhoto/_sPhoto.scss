@@ -1,6 +1,35 @@
 
 	// start .sPhoto
 	.sPhoto {
+
+		.row{
+			max-width: (317px * 3);
+			--bs-gutter-x: 0;
+			margin-left: -15px;
+			margin-right: -15px;
+			@include media-breakpoint-up(sm) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+
+		&__img-wrap{
+			display: block;
+			position: relative;
+			@include block(317,196);
+			img{
+				position:absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+
+
+
+
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

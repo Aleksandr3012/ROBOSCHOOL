@@ -2,8 +2,21 @@ mixin sPhoto()
 	// start sPhoto
 	+b.SECTION.sPhoto.section#sPhoto&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sPhoto
-				
+			+b.section-title
+				h2 фотографии с&nbsp;наших занятий
 			.row
+				mixin img-wrap(i)
+					- var img= `img/@2x/sPhoto-${i}.png`
+					+e.img-wrap.col-md-4.col-6(href= img data-fancybox="gal")
+						img.lazy.res-i(src="#" data-src= img, alt="")
+
+				+img-wrap(1)
+				+img-wrap(2)
+				+img-wrap(3)
+				+img-wrap(4)
+				+img-wrap(5)
+				+img-wrap(6)
+
+
+				
 	// end sPhoto
