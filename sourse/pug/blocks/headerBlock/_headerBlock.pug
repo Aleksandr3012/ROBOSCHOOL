@@ -2,13 +2,23 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container-fluid
-			a.link-modal(href="#modal-call")
-				<picture> 
-					<source srcset="img/@2x/webp/banner.webp" type="image/webp" media="(min-width:576px)">
-					<source srcset="img/@2x/webp/banner-mob.webp" type="image/webp">
-					<source srcset="img/@2x/banner.jpg" type="image/jpg" media="(min-width:576px)">
-					//- <source srcset="img/@2x/banner-mob.jpg" type="image/jpg">
-					<img src="img/@2x/banner-mob.jpg" alt="">
-				</picture>
+			+e.headerSlider
+				.swiper-container.headerSlider-js
+					.swiper-wrapper
+						mixin slide()
+							.swiper-slide
+								a.link-modal(href="#modal-call")
+									<picture> 
+										<source class="swiper-lazy" srcset="img/@2x/webp/banner.webp" type="image/webp" media="(min-width:576px)">
+										<source class="swiper-lazy" srcset="img/@2x/webp/banner-mob.webp" type="image/webp">
+										<source class="swiper-lazy" srcset="img/@2x/banner.jpg" type="image/jpg" media="(min-width:576px)">
+										//- <source srcset="img/@2x/banner-mob.jpg" type="image/jpg">
+										<img class="swiper-lazy" src="img/@2x/banner-mob.jpg" alt="">
+									</picture>
+						+slide
+						+slide
+						+slide
+						+slide
+						+slide
 
 	// end headerBlock

@@ -27,6 +27,21 @@ block pagecontent
 	+sAbout()
 	+sCourses()
 	+sAdvantages()
+	+b.SECTION.sForm.section#sForm.sForm--horizontal
+		.container
+			+form-wrap
+				//- +e.title записаться на занятия
+				.row
+					.col-lg-3
+						+input('Ваше имя','text')
+					.col-lg-3
+						+input('Номер телефона','tel')
+					.col-lg-3
+						+input('E-mail','email')
+					.col-lg-3
+						+e.BUTTON.btn(type="submit") записаться на занятия
+				//- +input('Имя ребенка','text')
+				//- +input('Промокод','text')
 	+sForm()
 	+sPhoto()
 	+sTeachers()

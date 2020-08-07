@@ -428,6 +428,17 @@ function eventHandler() {
 		},
 	});
 
+	const headerBlock = new Swiper('.headerSlider-js', {
+		// slidesPerView: 5,
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 0,
+		loop: true,
+		autoplay: {
+			delay: 5000,
+		},
+	});
+
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
