@@ -8,13 +8,18 @@
 	
 	&__filter {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
-		margin-bottom: rem(21);
+		margin-bottom: rem(34);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(21);
+		}
 	}
 
 	&__text {
 		flex-shrink: 0;
 		margin-right: rem(10);
+		margin-bottom: rem(10);
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -41,7 +46,14 @@
 
 .coursesSlider {
 	position: relative;
+	.swiper-slide {
+		height: auto;
+	}
+
 	&__slide {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		box-shadow: 0 0 $h6-font-size rgba(0, 0, 0, 0.06);
 		border-radius: $border-radius;
 		background-color: #ffffff;
@@ -75,6 +87,7 @@
 		@extend .h3;
 		font-weight: 700;
 		line-height: 1.35;
+		padding-bottom: rem(70);
 		color: $secondary;
 		margin-bottom: auto;
 	}
@@ -89,9 +102,12 @@
 
 	.swiper-container {
 		overflow: visible;
-		margin-left: 20px;
-		margin-right: 20px;
-		max-width: rem(1272);
+		max-width: 86%;
+		@include media-breakpoint-up(xl) {
+			margin-right: 20px;
+			margin-left: 20px;
+			max-width: rem(1272);
+		}
 		&::after {
 			content: '';
 			top: 0;
@@ -106,7 +122,6 @@
 	}
 
 	&__condition {
-		margin-top: rem(70);
 		margin-bottom: rem(12);
 		@extend .h5;
 		color: $primary;
@@ -132,11 +147,13 @@
 		width: rem(38px);
 		height: rem(38px);
 		border-radius: 50%;
-		display: flex;
 		align-items: center;
 		justify-content: center;
 		z-index: 2;
-		left: 90.4vw;
+		left: 90%;
+		@include media-breakpoint-up(xl) {
+			left: 90.4vw;
+		}
 		top: 48%;
 	}
 }

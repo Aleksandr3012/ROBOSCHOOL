@@ -1,7 +1,10 @@
+// start .sAchievements
+.sAchievements {
+	padding-top: calc(var(--sPT) / 1.1);
 
-	// start .sAchievements
-	.sAchievements {
-		 
+	.section-title {
+		padding-bottom: calc(var(--sTPB) / 1.1);
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -24,3 +27,51 @@
 	@include media-breakpoint-down(sm) {}
 
 } // end.sAchievements
+
+.achievementsSlider {
+	position: relative;
+	.swiper-container {
+		overflow: visible;
+		margin-right: 20px;
+		margin-left: 60px;
+		max-width: 50%;
+		@include media-breakpoint-up(lg) {
+			margin-left: 20px;
+			max-width: rem(1160);
+		}
+		
+	}
+
+	&__slide {
+		border-radius: $border-radius;
+		background-color: #ffffff;
+		box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.14);
+		overflow: hidden;
+		margin-bottom: rem(10);
+	}
+
+	picture {
+		@include block(202,310);
+
+		img {
+			@include a-cent;
+			width: 102%;
+			height: 102%;
+			object-fit: cover;
+		}
+	}
+
+	.achievementsSlider-next {
+		position: absolute;
+		background-color: #fff;
+		border: solid 1px $secondary;
+		width: rem(38px);
+		height: rem(38px);
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+		left: 90.4vw;
+		top: 43%;
+	}
+}

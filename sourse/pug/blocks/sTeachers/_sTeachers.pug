@@ -2,8 +2,48 @@ mixin sTeachers()
 	// start sTeachers
 	+b.SECTION.sTeachers.section#sTeachers&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sTeachers
+			+b.section-title
+				h2 Наши преподаватели
+				a(href="#") Все сотрудники
 				
-			.row
+			+b.teachersSlider
+				.swiper-container.teachersSlider-js
+					.swiper-wrapper
+						mixin slide()
+							.swiper-slide
+								+e.slide
+									.row
+										+e.col.col-md-auto
+											picture
+												source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/teacher.webp` type="image/webp")
+												img.swiper-lazy(src="#" data-src=`img/@2x/teacher.jpg`, alt="")
+										.col
+											+e.content
+												if block
+													block
+												else
+													+e.name Егор Дмитриев
+													+e.motto Наверное, в жизни главное — Никогда не изменять себе, и как говорил дедушка Ленин: «Учиться-учиться и ещё раз учиться».
+													p Окончил Радиотехнический лицей &#8470;&nbsp;19. За&nbsp;четыре года обучения освоил пять профессий (техник, монтажник, регулировщик, слесарь сборщик, администратор).
+													p Учил только те&nbsp;предметы, которые мне нравились (электротехника, информатика), поэтому тройки меня не&nbsp;обошли стороной (литература, обществознание). В&nbsp;студенческие годы освоил Компас-3D, AutoCad и&nbsp;Photoshop.
+													p Именно умению правильно написать программу и грамотно распределить ресурсы компьютера, я и буду учить ребят. А ещё мы откроем для себя волшебный мир программирования, который окружает нас повсюду, даже в обычном выключателе!
+						+slide
+						+slide
+							+e.name Lorem ipsum dolor sit.
+							+e.motto Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, temporibus.
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, impedit eveniet. Quasi, vel? Tempora at quos corrupti consectetur iusto aut delectus architecto rerum consequuntur tempore nisi fugit quam, ratione voluptatem!
+							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium nam inventore fugiat nobis voluptas exercitationem ab architecto, illo porro adipisci non et quis sed cum nesciunt excepturi distinctio animi!
+							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium nam inventore fugiat nobis voluptas exercitationem ab architecto, illo porro adipisci non et quis sed cum nesciunt excepturi distinctio animi!
+							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium nam inventore fugiat nobis voluptas exercitationem ab architecto, illo porro adipisci non et quis sed cum nesciunt excepturi distinctio animi!
+							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusantium nam inventore fugiat nobis voluptas exercitationem ab architecto, illo porro adipisci non et quis sed cum nesciunt excepturi distinctio animi!
+						+slide
+						+slide
+						+slide
+						+slide
+				.swiper-pagination
+				.teachersSlider-next.d-none.d-md-block
+					img.lazy(src="#" data-src="img/@2x/chevron-right.png", alt="")
+				.teachersSlider-prev.d-none.d-md-block
+						img.lazy(src="#" data-src="img/@2x/chevron-left.png", alt="")
+
 	// end sTeachers

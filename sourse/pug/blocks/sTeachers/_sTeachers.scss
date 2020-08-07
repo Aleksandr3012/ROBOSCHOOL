@@ -1,7 +1,9 @@
-
-	// start .sTeachers
-	.sTeachers {
-		 
+// start .sTeachers
+.sTeachers {
+	
+	.section-title {
+		padding-bottom: calc(var(--sTPB) / 2.2);
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -24,3 +26,105 @@
 	@include media-breakpoint-down(sm) {}
 
 } // end.sTeachers
+
+.teachersSlider {
+	position: relative;
+	.swiper-container {
+		max-width: rem(950);
+		// @include media-breakpoint-down(md) {
+		// 	overflow: visible;
+		// 	max-width: 92%;
+		// }
+	}
+	.swiper-slide {
+		padding: rem(10) rem(10);
+	}
+	&__slide {
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.07);
+		border-radius: $border-radius-sm;
+	}
+
+	&__col {
+		@include media-breakpoint-up(md) {
+			width: rem(218) !important;
+			padding-right: rem(5);
+		}
+	}
+
+	&__content {
+		padding: rem(20) rem(20) rem(10) rem(10);
+		@include media-breakpoint-up(md) {
+			padding: rem(10) rem(20) rem(10) rem(0);
+		}
+
+	}
+
+	picture {
+		@include block(197,223);
+
+		img {
+			@include a-cent;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		&::before {
+			@include media-breakpoint-down(md) {
+				padding-bottom: 53.5%;
+			}
+		}
+	}
+
+	&__name {
+		@extend .h5;
+		color: $secondary;
+		font-weight: 600;
+		margin-bottom: rem(3);
+	}
+
+	&__motto {
+		font-size: $xxsmall;
+		font-weight: 600;
+		color: rgba($color: $black, $alpha: 0.5);
+		margin-bottom: rem(10);
+	}
+
+	p {
+		font-size: $xsmall;
+		margin-bottom: rem(8);
+		line-height: 1.4;
+	}
+
+	.swiper-pagination {
+		position: relative;
+	}
+
+	.teachersSlider-next, .teachersSlider-prev {
+		position: absolute;
+		top: 38%;
+		width: rem(34px);
+		height: rem(34px);
+		background-color: #fff;
+		border: 1px solid #0693E3;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 10;
+	}
+	.teachersSlider-next {
+		right: 2vw;
+	}
+	.teachersSlider-prev {
+		left: 2vw;
+	}
+	.swiper-pagination-bullet {
+		background: rgba($color: $cyan, $alpha: 0.2);
+		&:hover {
+			background: $cyan;
+		}
+		&-active {
+			background: $cyan;
+		}
+	}
+}

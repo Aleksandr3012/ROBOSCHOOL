@@ -1,43 +1,140 @@
 .footer {
-		
+	padding-top: rem(20);
+	background-color: $secondary;
+	color: #fff;
 
+	li {
+		list-style: none;
+		font-weight: 600;
+		line-height: 2;
+		a {
+			color: inherit;
+			&:hover {
+				opacity: .6;
+			}
+		}
+		@include media-breakpoint-down(sm) {
+			display: inline-block;
+			margin-right: rem(30);
+		}
+	}
+
+	&__nav {
+		@include media-breakpoint-up(lg) {
+			padding-left: rem(28);
+		}
+
+		.footer__title {
+			margin-bottom: rem(12);
+		}
+	}
+
+
+	&__btn {
+		@extend .btn;
+		@extend .btn-light;
+		display: block;
+		margin-bottom: rem(20);
+	}
+
+	&__title {
+		font-weight: bold;
+		margin-bottom: rem(21);
+
+	}
+
+	&__col {
+		text-align: right;
+	}
+
+	&__contact {
+		display: flex;
+		flex-direction: column;
+		span  {
+			font-weight: bold;
+		}
+
+		a {
+			color: #fff;
+		}
+	}
+
+	&__filiation {
+		font-size: $small;
+		font-weight: 600;
+		text-decoration: underline;
+		margin-bottom: rem(9);
+	}
+
+	&__tel {
+		font-weight: 700;
+		&--sm {
+			font-size: $small;
+			margin-bottom: rem(7);
+		}
+	}
+
+	&__mail {
+		text-decoration: underline;
+		font-size: $small;
+		font-weight: 600;
+	}
+
+	&__foot {
+		padding-top: rem(26);
+		font-size: $small;
+		text-transform: uppercase;
+		// border-bottom: solid 1px #fff;
+		letter-spacing: 0.2em;
+		text-decoration: underline;
+		text-align: center;
+	}
+
+	&__vk {
+		display: block;
+		margin-bottom: rem(12);
+	}
+
+	.soc {
+		margin-bottom: rem(20);
+	}
 
 // 
 @include media-breakpoint-up(xl) {}
-
 @include media-breakpoint-up(lg) {}
-
 @include media-breakpoint-up(md) {}
-
 @include media-breakpoint-up(sm) {}
-
 @include media-breakpoint-up(xs) {}
-
-
-// 
 @include media-breakpoint-between(md, xl) {}
-
-
-// 
 @include media-breakpoint-only(xs) {}
-
 @include media-breakpoint-only(sm) {}
-
 @include media-breakpoint-only(md) {}
-
 @include media-breakpoint-only(lg) {}
-
 @include media-breakpoint-only(xl) {}
-
-
-// 
 @include media-breakpoint-down(xl) {}
-
 @include media-breakpoint-down(lg) {}
-
 @include media-breakpoint-down(md) {}
-
 @include media-breakpoint-down(sm) {}
-
 @include media-breakpoint-down(xs) {}
+
+	.form-wrap {
+		position: relative;
+		margin-bottom: rem(13);
+
+		&__btn {
+			background-color: transparent;
+			border: none;
+			position: absolute;
+			@include a-cent(y);
+			right: rem(7);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.icon {
+				color: $secondary;
+				font-size: rem(20);
+			}
+		}
+	}
 }

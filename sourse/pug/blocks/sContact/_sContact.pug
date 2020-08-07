@@ -2,8 +2,28 @@ mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
+			+b.section-title
+				h2 ГДЕ НАХОДЯТСЯ ШКОЛЫ
+				a(href="#") Все филиалы
 				
-			.row
+			+e.descr
+				p На&nbsp;карте можно легко и&nbsp;просто найти для себя филиал, который будет самым удобным вариантом к&nbsp;посещению для Вас и&nbsp;Вашего ребёнка. В&nbsp;каждом филиале отмечены курсы, которые преподаются на&nbsp;сегодняшний день.
+				p Синим цветом на&nbsp;карте отмечены образовательные учреждения, в&nbsp;которых Школа Робототехники ROBOSCHOOL проводит обучение, а&nbsp;оранжевым&nbsp;&mdash; уже собственные Учебные центры ROBOSCHOOL.
+			+e.filter
+				+e.text Фильтровать филиалы по курсам:
+				+b.select-group
+					.select-wrap
+						select.form-control(name="age")
+							option(value="" selected) Любые курсы
+							option(value="75B") Lorem ipsum dolor sit.
+							option(value="75C") Lorem ipsum dolor sit amet.
+							option(value="80B") Lorem ipsum dolor sit amet consectetur.
+							option(value="80C") Lorem ipsum, dolor sit amet consectetur adipisicing.
+				+e.filterResult Результатов:
+					span 17
+		+b.mapWrap
+			<iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A949c8afae2c0fed6bb84d1408a5df20bd8cbcd17edf97998d382e9afcf15339f&amp;source=constructor"></iframe>
+		+e.btn.link-modal(href="#modal-call") Записаться на занятие
+
+
 	// end sContact

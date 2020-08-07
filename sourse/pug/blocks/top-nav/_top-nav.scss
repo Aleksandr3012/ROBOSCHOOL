@@ -40,7 +40,8 @@
 	}
 
 	&__item {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
 		list-style-type: none;
 	}
 
@@ -49,18 +50,27 @@
 		color: $body-color;
 		font-size: $btn-font-size;
 		font-weight: 600;
+		padding: 0 3px;
+		@include media-breakpoint-only(lg) {
+			font-size: $small;
+		}
 
 	}
 
 	&__btn {
 		@extend .btn;
 		@extend .btn-primary;
+		@include media-breakpoint-only(lg) {
+			font-size: $xsmall;
+			margin-left: -20px;
+		}
 	}
 	li {
 		list-style: none;
 	}
 	.drop {
 		position: absolute;
+		z-index: 5;
 		border-radius: $border-radius;
 		border: solid 1px $body-color;
 		background-color: #fff;
@@ -82,14 +92,19 @@
 		display: flex;
 		align-items: center;
 		&::after {
-			width: rem(10);
-			height: rem(10);
-			display: block;
 			content: '';
+			display: block;
 			background-position: center bottom;
 			background-repeat: no-repeat;
 			background-size: 100%;
-			margin-left: rem(6);
+			margin-left: 1px;
+			width: rem(8);
+			height: rem(8);
+			@include media-breakpoint-up(xl) {
+				margin-left: rem(6);
+				width: rem(10);
+				height: rem(10);
+			}
 			background-image: url('../img/arrow-down.svg');
 		}
 		&:hover .drop {

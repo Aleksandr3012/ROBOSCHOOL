@@ -12,6 +12,7 @@ include ../blocks/sAchievements/_sAchievements.pug
 include ../blocks/sReviews/_sReviews.pug
 include ../blocks/sQuestions/_sQuestions.pug
 include ../blocks/sNews/_sNews.pug
+include ../blocks/sAddresses/_sAddresses.pug
 
 block variables
 	- let  mainPage= null
@@ -19,9 +20,7 @@ block title
 	- let  title= 'ROBOSCHOOL'
 	title= title
 block pagecontent
-	+mob-mnu()
 	+header()
-
 		+topLine()
 		+top-nav()
 	+headerBlock()
@@ -36,29 +35,8 @@ block pagecontent
 	+sQuestions()
 	+sNews()
 	+sContact()
-
-	.container
-		a.link-modal(href="#modal-call" data-title="title"  data-text="text  sadasdasd" data-btn="btn sdasdsa" data-order="order  ddfs") modal-call
-		a.link-modal(href="#modal-call" data-title="title  111"  data-text="text  sadasdasd" data-btn="btn sdasdsa" data-order="order  ddfs") modal-call
-		+b.tabs
-			+e.caption
-				+e.btn.btn.btn-primary.active btn 1
-				+e.btn.btn.btn-primary btn 2
-				+e.btn.btn.btn-primary btn 3
-			div
-				+e.content.active  content 1
-				+e.content content 2
-				+e.content content 3
-		+b.tabs
-			+e.caption
-				+e.btn.btn.btn-primary.active btn 1
-				+e.btn.btn.btn-primary btn 2
-				+e.btn.btn.btn-primary btn 3
-			div
-				+e.content.active  content 1
-				+e.content content 2
-				+e.content content 3
-		
+	+sAddresses()
+	
 	+footer()
 
 

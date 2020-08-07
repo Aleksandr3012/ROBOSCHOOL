@@ -5,11 +5,16 @@ mixin modal()
 	+b.modal-win(id="modal-call" class=" " style="display: none" )
 		+form-wrap
 			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p.after-headline Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут
-			+input("Ваше Имя")(required)  
-			+e.BUTTON.btn.btn(type="submit"  ) 
-			+polite()
+				+e.title Запишитесь на пробное занятие
+				p Мы&nbsp;вам позвоним, чтобы обсудить удобные время и&nbsp;место для проведения занятия
+			+e.wrapper
+				+input("Имя родителя *")(required)  
+				+input("Имя ребенка *")(required)  
+				+input("Номер телефона *",'tel')(required)  
+				+input("E-mail *",'email')(required)  
+				+input("Промокод")(required)  
+				+e.BUTTON.btn(type="submit") записаться
+			//- +polite()
 	// #modal-call
 	
 	// end modals

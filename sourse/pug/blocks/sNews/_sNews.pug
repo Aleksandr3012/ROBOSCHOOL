@@ -2,8 +2,33 @@ mixin sNews()
 	// start sNews
 	+b.SECTION.sNews.section#sNews&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sNews
-				
+			+b.section-title
+				h2 Последние новости
+				a(href="#") Все новости
 			.row
+				mixin newsItem(img,date,title,btn)
+					+e.newsItem
+						+e.topLine
+							.row
+								+e.col.col-auto
+									+pic(`news-${img}`)
+								.col
+									+e.date= date
+									+e.title(href="#")= title
+						block
+						if btn
+							+e.btn(href="#") Подробнее
+								img(src="img/@2x/arrow-r.png", alt="")
+				.col-lg-4
+					+newsItem('1','10.04.2020','Время подарков!')
+						p А&nbsp;мы&nbsp;тут в&nbsp;нашей группе&nbsp;ВК призы раздаём, а&nbsp;ты&nbsp;ещё об&nbsp;этом и&nbsp;не&nbsp;знаешь.
+						p Срочно переходи по ссылке <br> #[a(href="https://vk.com/roboschoolpro?w=wall-173415941_934") https://vk.com/roboschoolpro?w=wall-173415941_934] и&nbsp;выиграй для своего ребёнка online-интенсив по&nbsp;программированию!
+						p Конкурс репостов продлится до&nbsp;17&nbsp;апреля. Так что поспеши!
+				.col-lg-4
+					+newsItem('2','19.03.2020','«Новичкам везёт!» — скидка 30%!','btn')
+						p Дети хотят попробовать свои силы в&nbsp;робототехнике или программировании, а&nbsp;Вы всё не&nbsp;можете решить, какой клуб для них выбрать? Самое время действовать! ROBOSCHOOL дарит новичкам скидку&nbsp;30% на&nbsp;свои самые популярные курсы для детей от&nbsp;4-х до&nbsp;15&nbsp;лет!
+				.col-lg-4
+					+newsItem('3','10.04.2020','Перенос занятий из школы №530 в Центр раннего развития «Дети Пушкина»','btn')
+						p Уважаемые родители, администрация ROBOSCHOOL спешит сообщить о&nbsp;том, что с&nbsp;27&nbsp;февраля занятия по&nbsp;робототехнике переносятся из&nbsp;школы &#8470;&nbsp;530&nbsp;в Центр раннего развития &laquo;Дети Пушкина&raquo;.
+						p Новый адрес: ул. Железнодорожная, д.56 корпус А.
 	// end sNews

@@ -1,10 +1,14 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		+pic('banner')(class="picture-bg")
 		.container
-			+b.section-title
-				h1 Бесплатное пробное занятие для новичков!
-			+e.btn.link-modal(href="#modal-call") Записаться на занятие
-						
+			a.link-modal(href="#modal-call")
+				<picture> 
+					<source srcset="img/@2x/webp/banner.webp" type="image/webp" media="(min-width:576px)">
+					<source srcset="img/@2x/webp/banner-mob.webp" type="image/webp">
+					<source srcset="img/@2x/banner.jpg" type="image/jpg" media="(min-width:576px)">
+					//- <source srcset="img/@2x/banner-mob.jpg" type="image/jpg">
+					<img src="img/@2x/banner-mob.jpg" alt="">
+				</picture>
+
 	// end headerBlock

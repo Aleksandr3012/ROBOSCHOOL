@@ -60,12 +60,14 @@ const JSCCommon = {
 	toggleMenu() {
 		if (this.btnToggleMenuMobile) {
 			this.btnToggleMenuMobile.forEach(element => {
-				element.addEventListener('click', () => {
-					this.btnToggleMenuMobile.forEach(element => element.classList.toggle("on"));
-					this.menuMobile.classList.toggle("active");
-					document.body.classList.toggle("fixed");
-					return false;
-				});
+				if (!element.classList.contains('on')){
+					element.addEventListener('click', () => {
+						this.btnToggleMenuMobile.forEach(element => element.classList.add("on"));
+						this.menuMobile.classList.add("active");
+						document.body.classList.add("fixed");
+						return false;
+					});
+				} 
 			});
 		}
 	},
@@ -85,7 +87,7 @@ const JSCCommon = {
 			this.toggleMenu();
 			document.addEventListener('mouseup', (event) => {
 				let container = event.target.closest(".menu-mobile--js.active"); // (1)
-				if (!container) {
+				if (!container || this.btnToggleMenuMobile.contains('on')) {
 					this.closeMenu();
 				}
 			}, { passive: true });
@@ -246,7 +248,7 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	let screenName;
-	screenName = 'main.jpg';
+	screenName = 'main-mob.jpg';
 	screenName
 		? $(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`)
 		: '';
@@ -322,7 +324,7 @@ function eventHandler() {
 		},
 		navigation: {
 			nextEl: '.coursesSlider-next',
-			// prevEl: '.headerSlider-prev',
+			// prevEl: '.coursesSlider-prev',
 		},
 		breakpoints: { 
 			576: { 
@@ -339,6 +341,63 @@ function eventHandler() {
 		},
 	});
 
+	let teachersSlider = new Swiper('.teachersSlider-js', {
+		slidesPerView: 1,
+		loop: true,
+		autoHeight: true,
+		spaceBetween: 0,
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 2,
+		},
+		navigation: {
+			nextEl: '.teachersSlider-next',
+			prevEl: '.teachersSlider-prev',
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true,
+		},
+	});
+
+	let achievementsSlider = new Swiper('.achievementsSlider-js', {
+		slidesPerView: 1,
+		loop: true,
+		// autoHeight: true,
+		spaceBetween: 37,
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 2,
+		},
+		navigation: {
+			nextEl: '.achievementsSlider-next',
+			// prevEl: '.achievementsSlider-prev',
+		},
+		breakpoints: { 
+			576: { 
+				slidesPerView: 3,
+			},
+			
+			992: { 
+				slidesPerView: 4,
+			},
+
+			1200: {
+				slidesPerView: 5,
+			}
+		},
+	});
+
+	let reviewsSlider = new Swiper('.reviewsSlider-js', {
+		slidesPerView: 'auto',
+		// loop: true,
+		// autoHeight: true,
+		spaceBetween: 30,
+
+	});
+
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
@@ -351,6 +410,17 @@ function eventHandler() {
 
 	});
 	// modal window
+	$('.accardion-js').click(function () {
+		$(this).toggleClass('active');
+
+		$(this.parentElement).find('.accardionToggle-js').slideToggle(function () {
+			$(this).toggleClass('active');
+		});
+
+	});
+
+	let now = new Date();
+	$('.curentYear').text(now.getFullYear());
 
 };
 if (document.readyState !== 'loading') {

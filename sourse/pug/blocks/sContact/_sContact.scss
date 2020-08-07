@@ -1,29 +1,85 @@
+// start .sContact
+.sContact {
+	padding-top: calc(var(--sPT) / 1.5);
+	p {
+		line-height: 1.4;
+		margin-bottom: rem(20);
+		&:last-child{
+			margin-bottom: rem(10);
+		}
+	}
+	&__btn {
+		margin-top: rem(24);
+		@extend .btn;
+		@extend .btn-primary;
+		display: block;
+		max-width: rem(204);
+		margin-left: auto;
+		margin-right: auto;
+		padding: rem(7);
+	}
 
-	// start .sContact
-	.sContact {
-		 
+	.select-group {
+		@include media-breakpoint-up(lg) {
+			width: rem(420);
+		}
+		margin-right: 1rem;
+		margin-bottom: rem(10);
+
+		.form-control {
+			@include media-breakpoint-up(lg) {
+				background-position: 95%;
+			}
+		}
+	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
 	@include media-breakpoint-up(sm) {}
 	@include media-breakpoint-up(xs) {}
-	
-	//
 	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
 	@include media-breakpoint-only(xs) {}
 	@include media-breakpoint-only(sm) {}
 	@include media-breakpoint-only(md) {}
 	@include media-breakpoint-only(lg) {}
 	@include media-breakpoint-only(xl) {}
-	
-	//
 	@include media-breakpoint-down(xl) {}
 	@include media-breakpoint-down(lg) {}
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	&__filter {
+		@include media-breakpoint-up(md) {
+			display: flex;
+			align-items: center;
+			padding-bottom: rem(24);
+		}
+		padding-bottom: rem(20);
+	}
+
+	&__filterResult {
+		@include media-breakpoint-down(md) {
+			text-align: center;
+		}
+	}
+
+	&__text {
+		margin-right: rem(10);
+		margin-bottom: rem(10);
+	}
 } // end.sContact
+
+.mapWrap{
+	height: rem(350);
+	@include media-breakpoint-up(md) {
+		height: rem(574);
+	}
+	position: relative;
+	iframe {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+}

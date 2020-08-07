@@ -1,21 +1,42 @@
 // start .topLine
 .topLine {
 	padding-top: rem(10);
+	@include media-breakpoint-down(lg) {
+		padding-bottom: rem(10);
+	}
+	position: relative;
+	z-index: 9999;
+	background-color: #fff;
+	box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.11);
+
 	&__logo {
 		color: $secondary !important;
 		display: flex;
 		align-items: center;
 
 		img {
-			width: rem(84px);
-			height: rem(84px);
+			width: rem(58px);
+			height: rem(58px);
 			margin-right: rem(10);
+			@include media-breakpoint-up(md) {
+				width: rem(70px);
+				height: rem(70px);
+				margin-right: rem(3);
+			}
+			@include media-breakpoint-up(xl) {
+				margin-right: rem(10);
+				width: rem(84px);
+				height: rem(84px);
+			}
 		}
 	}
 
 	&__name {
 		display: block;
-		font-size: rem(32);
+		font-size: rem(20);
+		@include media-breakpoint-up(md) {
+			font-size: rem(32);
+		}
 		font-weight: normal;
 		font-weight: 700;
 		line-height: 1.4;
@@ -23,11 +44,17 @@
 
 	&__logoDescr {
 		font-weight: 600;
-		font-size: rem(17px);
+		font-size: rem(15);
+		@include media-breakpoint-up(xl) {
+			font-size: rem(17px);
+		}
 	}
 
 	&__item {
-		margin-left: rem(41);
+		margin-left: rem(10);
+		@include media-breakpoint-up(xl) {
+			margin-left: rem(41);
+		}
 	}
 
 	&__itemLink {
@@ -46,6 +73,11 @@
 	&__itemText {
 		color: $secondary;
 		font-weight: bold;
+	}
+
+	.icon-login {
+		color: $secondary;
+		font-size: rem(23);
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

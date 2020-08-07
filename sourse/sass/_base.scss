@@ -8,11 +8,11 @@ html {
 	@include a-cent(x);
 	display: block;
 	pointer-events: none;
-	z-index: 1000;
+	z-index: 99999;
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
-	background-position: center 0;
+	background-position: center -1418px;
 	opacity: 0;
 	// opacity: 0.7;
 }
@@ -34,12 +34,22 @@ html {
 		text-transform: uppercase;
 		font-weight: 600;
 		margin-right: 4px;
+		font-size: $h2-font-size * 0.8;
+		@include media-breakpoint-up(md) {
+			font-size: $h2-font-size;
+		}
+
 	}
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 	a {
-		text-decoration: underline;
+		border-bottom: solid 1px $primary;
+		line-height: 1;
 		font-size: $small;
+		&:hover {
+			border-color: transparent;
+		}
 	}
 }
 
@@ -436,7 +446,15 @@ iframe {
 	color: #fff;
 	font-weight: 700;
 	border-radius: $border-radius-sm;
+	font-size: $btn-font-size * 0.8;
+	@include media-breakpoint-up(md) {
+		font-size: $btn-font-size;
+	}
+	@include media-breakpoint-down(md) {
+		padding: rem(6);
+	}
 	&-gradient {
+		color: #fff;
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0) 100%), #FF6900;
 		box-shadow: 0px 0px 12px rgba(255, 107, 3, 0.3);
 		border-radius: $border-radius-sm;
@@ -445,5 +463,16 @@ iframe {
 			width: rem(217);
 		}
 	}
+}
+
+.btn-outline-secondary {
+	border-radius: $border-radius-sm;
+	font-weight: 600;
+}
+
+.btn-light {
+	border-radius: $border-radius-sm;
+	font-weight: bold;
+	color: $secondary !important;
 }
 

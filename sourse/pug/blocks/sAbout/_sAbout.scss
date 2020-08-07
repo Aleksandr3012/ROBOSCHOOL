@@ -66,14 +66,21 @@
 	}
 
 	&__buttons {
-		padding-top: rem(40);
+		text-align: center;
 		display: flex;
+		justify-content: center;
+		padding: rem(40) rem(15) 0;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 
 	&__btn {
 		@extend .btn;
 		@extend .btn-primary;
 		@extend .btn-primary-gradient;
+		@include media-breakpoint-down(sm) {
+			width: 153px;
+			margin: 0 auto 15px;
+		}
 	}
 }

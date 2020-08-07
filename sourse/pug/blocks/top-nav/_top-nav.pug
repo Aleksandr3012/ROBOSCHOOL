@@ -16,11 +16,21 @@ mixin mob-mnu()
 		+e.inner
 		
 			+mnu()
+			+e.contacts
+				+e.line
+					span г. Санкт-Петербург
+					a(href="#") Все филиалы
+				+e.line
+					+e.tel(href="tel:") +7(812)5021085
+					a.link-modal(href="#modal-call") Заказать звонок
+				+e.line.text-center
+					a(href="mailto:info@roboschool.pro") info@roboschool.pro
+
 			.text-right
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
-	+b.top-nav.block-with-lazy
+	+b.top-nav.block-with-lazy.d-none.d-lg-block
 		.container
 			.row.align-items-center
 				.col

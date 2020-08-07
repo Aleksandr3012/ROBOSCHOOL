@@ -3,7 +3,36 @@ mixin sForm()
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sForm
-				
-			.row
+				h2 КАК РАБОТАЕТ ШКОЛА
+			+b.tabs
+				+e.caption
+					+e.btn.active Основы для отличного результата
+					+e.btn Чему учат в школе?
+					+e.btn Почему дети выбирают школу?
+				.row
+					+e.col.col-lg-auto
+						mixin content
+							+e.content&attributes(attributes)
+								+e.title В основе всех занятий в ROBOSCHOOL лежит несколько принципов:
+								+e.subtitle ИНДИВИДУАЛЬНЫЙ ПОДХОД
+								p Для нас каждый ребёнок уникален, поэтому в&nbsp;учебных группах не&nbsp;более 12 учеников.&nbsp;Таким образом мы&nbsp;можем обеспечить индивидуальный подход к&nbsp;каждому&nbsp;ребенку.
+								+e.subtitle ВЫСОКОТЕХНОЛОГИЧНЫЕ УЧЕБНЫЕ КЛАССЫ
+								p Наши курсы&nbsp;&mdash; это хорошо оборудованные классы, которые обеспечены всем необходимым для качественной подготовки Вашего ребёнка. Дорогостоящие конструкторы, ноутбуки, интерактивные доски, видеопроекторы и&nbsp;первоклассные авторские учебные программа&nbsp;&mdash; всё это для того, чтобы Ваш ребёнок усвоил материал максимально быстро, использовал полученные знания на&nbsp;занятиях и&nbsp;в&nbsp;реальной жизни, и&nbsp;получал только положительные эмоции!
+								+e.subtitle КВАЛИФИЦИРОВАННЫЕ ПЕДАГОГИ
+								p Профессионализм наших преподавателей позволяет найти подход, вовлечь в&nbsp;мир робототехники, программирования и&nbsp;творчества каждого ребенка!
+								+e.subtitle ИНТЕРАКТИВ И ВЗАИМОДЕЙСТВИЕ
+								p Для детей ROBOSCHOOL использует интерактивный и&nbsp;игровой методы в&nbsp;обучении. Мы&nbsp;даем возможность ученикам увидеть, как научный метод или теория может быть&nbsp;применен к&nbsp;повседневной жизни.
+						+content(class="active")
+						+e.content Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum debitis enim dolorem exercitationem blanditiis omnis architecto, perspiciatis laborum sed maiores eius cumque ab, beatae officia repellat molestias quia? At, est.
+						+content()
+					.col
+						+form-wrap
+							+e.title записаться на занятия
+							+input('Имя родителя','text')
+							+input('Имя ребенка','text')
+							+input('Номер телефона','tel')
+							+input('E-mail','email')
+							+input('Промокод','text')
+							+e.BUTTON.btn(type="submit") Отправить заявку
+
 	// end sForm

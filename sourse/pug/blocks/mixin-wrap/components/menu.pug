@@ -39,28 +39,28 @@ mixin mnu()
 	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		//- each linkPatch, linkName in nav
 		+e.LI.item.dropdown( itemprop="item" ): +e.link
-			span О школе
-			+b.UL.drop
+			span.accardion-js О школе
+			+b.UL.drop.accardionToggle-js
 				+e.LI.item
 					+e.A.link(href="#" itemprop="url") Lorem, ipsum.
 				+e.LI.item
 					+e.A.link(href="#" itemprop="url") Lorem, ipsum dolor.
 		+e.LI.item( itemprop="item" ): +e.A.link(href="#") Бесплатное занятие
 		+e.LI.item.dropdown( itemprop="item" ): +e.link
-			span Робототехника
-			+b.UL.drop
+			span.accardion-js Робототехника
+			+b.UL.drop.accardionToggle-js
 				+e.LI.item
 					+e.A.link(href="#" itemprop="url") Lorem, ipsum.
 				+e.LI.item
 					+e.A.link(href="#" itemprop="url") Lorem, ipsum dolor.
 		+e.LI.item.dropdown( itemprop="item" ): +e.link
-			span Программирование
-			+b.UL.drop
+			span.accardion-js Программирование
+			+b.UL.drop.accardionToggle-js
 				+e.LI.item
 					+e.A.link(href="#" itemprop="url") Lorem, ipsum.
 				+e.LI.item
 					+e.A.link(href="#" itemprop="url") Lorem, ipsum dolor.
 		+e.LI.item( itemprop="item" ): +e.A.link(href="#") Акции
 		+e.LI.item( itemprop="item" ): +e.A.link(href="#") Блог
-		+e.LI.item( itemprop="item" ): +e.A.link(href="#") Личный кабинет
+		+e.LI.item.d-none.d-md-inline( itemprop="item" ): +e.A.link(href="#") Личный кабинет
 //- /menu

@@ -1,4 +1,33 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			h2 footer
+			.row
+				.col-sm-7.col-md-4
+					+e.title ООО «Школа Робототехники СПб»
+					+e.vk(href="#")
+						+pic('vk')
+					+soc
+				.col-sm-5.col-md-5
+					+e.nav
+						+e.title.d-none.d-sm-block Дополнительная информация
+						ul
+							li: a(href="#") Вопрос-ответ
+							li: a(href="#") Партнёры
+							li: a(href="#") Вакансии
+							li: a(href="#") Способы оплаты
+							li: a(href="#") Документы
+
+				+e.col.col.d-none.d-md-block
+					+form-wrap
+						+input('Поиск...','text')
+						+e.btn(type="button")
+							+icon('search')
+					+e.btn.link-modal(href="#modal-call") Записаться на занятие
+					+e.contact
+						span г. Санкт-Петербург
+						+e.filiation(href="#") Все филиалы
+						+e.tel(href="tel:+78125021085") +7 (812) 502-10-85
+						+e.tel--sm(href="tel:+78125021085") +7 (812) 502-10-85
+						span Пн-Пт:  09:00-18:00
+						+e.mail(href="#mailto:info@roboschool.pro") info@roboschool.pro 
+			+e.foot.d-none.d-md-block © 2018-#[span.curentYear ] ROBOSCHOOL

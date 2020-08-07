@@ -68,16 +68,18 @@ var JSCCommon = {
 
 		if (this.btnToggleMenuMobile) {
 			this.btnToggleMenuMobile.forEach(function (element) {
-				element.addEventListener('click', function () {
-					_this.btnToggleMenuMobile.forEach(function (element) {
-						return element.classList.toggle("on");
+				if (!element.classList.contains('on')) {
+					element.addEventListener('click', function () {
+						_this.btnToggleMenuMobile.forEach(function (element) {
+							return element.classList.add("on");
+						});
+
+						_this.menuMobile.classList.add("active");
+
+						document.body.classList.add("fixed");
+						return false;
 					});
-
-					_this.menuMobile.classList.toggle("active");
-
-					document.body.classList.toggle("fixed");
-					return false;
-				});
+				}
 			});
 		}
 	},
@@ -98,7 +100,7 @@ var JSCCommon = {
 			document.addEventListener('mouseup', function (event) {
 				var container = event.target.closest(".menu-mobile--js.active"); // (1)
 
-				if (!container) {
+				if (!container || _this2.btnToggleMenuMobile.contains('on')) {
 					_this2.closeMenu();
 				}
 			}, {
@@ -258,7 +260,7 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 
 	var screenName;
-	screenName = 'main.jpg';
+	screenName = 'main-mob.jpg';
 	screenName ? $(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>")) : ''; // /добавляет подложку для pixel perfect
 
 	function whenResize() {
@@ -319,7 +321,7 @@ function eventHandler() {
 			loadPrevNextAmount: 2
 		},
 		navigation: {
-			nextEl: '.coursesSlider-next' // prevEl: '.headerSlider-prev',
+			nextEl: '.coursesSlider-next' // prevEl: '.coursesSlider-prev',
 
 		},
 		breakpoints: {
@@ -334,6 +336,57 @@ function eventHandler() {
 			}
 		}
 	});
+	var teachersSlider = new Swiper('.teachersSlider-js', {
+		slidesPerView: 1,
+		loop: true,
+		autoHeight: true,
+		spaceBetween: 0,
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 2
+		},
+		navigation: {
+			nextEl: '.teachersSlider-next',
+			prevEl: '.teachersSlider-prev'
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true
+		}
+	});
+	var achievementsSlider = new Swiper('.achievementsSlider-js', {
+		slidesPerView: 1,
+		loop: true,
+		// autoHeight: true,
+		spaceBetween: 37,
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 2
+		},
+		navigation: {
+			nextEl: '.achievementsSlider-next' // prevEl: '.achievementsSlider-prev',
+
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 3
+			},
+			992: {
+				slidesPerView: 4
+			},
+			1200: {
+				slidesPerView: 5
+			}
+		}
+	});
+	var reviewsSlider = new Swiper('.reviewsSlider-js', {
+		slidesPerView: 'auto',
+		// loop: true,
+		// autoHeight: true,
+		spaceBetween: 30
+	});
 	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',
 		freeMode: true,
@@ -342,6 +395,15 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true
 	})); // modal window
+
+	$('.accardion-js').click(function () {
+		$(this).toggleClass('active');
+		$(this.parentElement).find('.accardionToggle-js').slideToggle(function () {
+			$(this).toggleClass('active');
+		});
+	});
+	var now = new Date();
+	$('.curentYear').text(now.getFullYear());
 }
 
 ;

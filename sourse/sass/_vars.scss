@@ -46,7 +46,7 @@ $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
-$cyan: #17a2b8 !default;
+$cyan: #029ce6 !default;
 
 // scss-docs-start colors-map
 // $colors: (
@@ -190,7 +190,7 @@ $teal-900: shade-color($teal, 8) !default;
 $cyan-100: tint-color($cyan, 8) !default;
 $cyan-200: tint-color($cyan, 6) !default;
 $cyan-300: tint-color($cyan, 4) !default;
-$cyan-400: tint-color($cyan, 2) !default;
+$cyan-400: #10a1e7 !default;
 $cyan-500: $cyan !default;
 $cyan-600: shade-color($cyan, 2) !default;
 $cyan-700: shade-color($cyan, 4) !default;
@@ -419,7 +419,7 @@ $line-height-lg: 2 !default;
 $h1-font-size: rem(34px) !default;
 $h2-font-size: rem(26px) !default;
 $h3-font-size: rem(24px) !default;
-$h4-font-size: $font-size-base * 1.5 !default;
+$h4-font-size: rem(22px) !default;
 $h5-font-size: rem(20px) !default;
 $h6-font-size: rem(18px) !default;
 
@@ -616,9 +616,9 @@ $form-label-font-weight: null !default;
 $form-label-color: null !default;
 
 $input-padding-y: $input-btn-padding-y !default;
-$input-padding-x: $input-btn-padding-x !default;
+$input-padding-x: $h5-font-size !default;
 $input-font-family: $input-btn-font-family !default;
-$input-font-size: $input-btn-font-size !default;
+$input-font-size: $small !default;
 $input-font-weight: $font-weight-base !default;
 $input-line-height: $input-btn-line-height !default;
 
@@ -639,7 +639,7 @@ $input-border-color: $gray-400 !default;
 $input-border-width: $input-btn-border-width !default;
 $input-box-shadow: $box-shadow-inset !default;
 
-$input-border-radius: $border-radius !default;
+$input-border-radius: $h1-font-size !default;
 $input-border-radius-sm: $border-radius-sm !default;
 $input-border-radius-lg: $border-radius-lg !default;
 
@@ -649,7 +649,7 @@ $input-focus-color: $input-color !default;
 $input-focus-width: $input-btn-focus-width !default;
 $input-focus-box-shadow: $input-btn-focus-box-shadow !default;
 
-$input-placeholder-color: $gray-600 !default;
+$input-placeholder-color: rgba($color: $black, $alpha: 0.2) !default;
 $input-plaintext-color: $body-color !default;
 
 $input-height-border: $input-border-width * 2 !default;
