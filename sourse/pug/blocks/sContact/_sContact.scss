@@ -27,9 +27,7 @@
 		margin-bottom: rem(10);
 
 		.form-control {
-			@include media-breakpoint-up(lg) {
-				background-position: 95%;
-			}
+			background-position: calc(100% - #{rem(20)});
 		}
 	}
 

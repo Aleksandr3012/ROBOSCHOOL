@@ -246,7 +246,7 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	var _defaultSl;
+	var _defaultSl, _Swiper;
 
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
@@ -260,7 +260,7 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 
 	var screenName;
-	screenName = 'main-mob.jpg';
+	screenName = 'main.jpg';
 	screenName ? $(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>")) : ''; // /добавляет подложку для pixel perfect
 
 	function whenResize() {
@@ -299,18 +299,28 @@ function eventHandler() {
 		// }
 
 	}), _defaultSl);
-	var sliderAbout = new Swiper('.sliderAbout-js', {
-		slidesPerView: 1,
-		loop: true,
-		// autoHeight: true,
-		spaceBetween: 0,
-		//lazy
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 2
+	var sliderAbout = new Swiper('.sliderAbout-js', (_Swiper = {
+		effect: 'coverflow',
+		grabCursor: true,
+		centeredSlides: true,
+		coverflowEffect: {
+			rotate: 0,
+			stretch: -150,
+			depth: 300,
+			modifier: 1,
+			slideShadows: false
+		},
+		slidesPerView: 1
+	}, _defineProperty(_Swiper, "grabCursor", true), _defineProperty(_Swiper, "loop", true), _defineProperty(_Swiper, "spaceBetween", 30), _defineProperty(_Swiper, "breakpoints", {
+		768: {
+			spaceBetween: 0
 		}
-	});
+	}), _defineProperty(_Swiper, "lazy", {
+		loadPrevNext: true,
+		loadPrevNextAmount: 4
+	}), _Swiper));
 	var coursesSlider = new Swiper('.coursesSlider-js', {
+		grabCursor: true,
 		slidesPerView: 1,
 		loop: true,
 		// autoHeight: true,
@@ -318,7 +328,7 @@ function eventHandler() {
 		//lazy
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 2
+			loadPrevNextAmount: 4
 		},
 		navigation: {
 			nextEl: '.coursesSlider-next' // prevEl: '.coursesSlider-prev',
@@ -337,6 +347,7 @@ function eventHandler() {
 		}
 	});
 	var teachersSlider = new Swiper('.teachersSlider-js', {
+		grabCursor: true,
 		slidesPerView: 1,
 		loop: true,
 		autoHeight: true,
@@ -344,7 +355,7 @@ function eventHandler() {
 		//lazy
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 2
+			loadPrevNextAmount: 4
 		},
 		navigation: {
 			nextEl: '.teachersSlider-next',
@@ -356,6 +367,7 @@ function eventHandler() {
 		}
 	});
 	var achievementsSlider = new Swiper('.achievementsSlider-js', {
+		grabCursor: true,
 		slidesPerView: 1,
 		loop: true,
 		// autoHeight: true,
@@ -363,7 +375,8 @@ function eventHandler() {
 		//lazy
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 2
+			loadPrevNextAmount: 6,
+			loadOnTransitionStart: true
 		},
 		navigation: {
 			nextEl: '.achievementsSlider-next' // prevEl: '.achievementsSlider-prev',
@@ -385,7 +398,15 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		// loop: true,
 		// autoHeight: true,
-		spaceBetween: 30
+		freeMode: true,
+		freeModeMomentum: true,
+		spaceBetween: 30,
+		watchOverflow: true,
+		breakpoints: {
+			992: {
+				slidesPerView: 3
+			}
+		}
 	});
 	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
 		slidesPerView: 'auto',

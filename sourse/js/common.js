@@ -248,7 +248,7 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	let screenName;
-	screenName = 'main-mob.jpg';
+	screenName = 'main.jpg';
 	screenName
 		? $(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`)
 		: '';
@@ -301,18 +301,36 @@ function eventHandler() {
 	}
 
 	let sliderAbout = new Swiper('.sliderAbout-js', {
+		effect: 'coverflow',
+		grabCursor: true,
+		centeredSlides: true,
+		coverflowEffect: {
+			rotate: 0,
+			stretch: -150,
+			depth: 300,
+			modifier: 1,
+			slideShadows: false
+		},
 		slidesPerView: 1,
+		// effect: 'coverflow',
+		grabCursor: true,
 		loop: true,
 		// autoHeight: true,
-		spaceBetween: 0,
+		spaceBetween: 30,
 		//lazy
+		breakpoints: { 
+			768: { 
+				spaceBetween: 0,
+			}
+		},
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 2,
+			loadPrevNextAmount: 4,
 		},
 	});
 
 	let coursesSlider = new Swiper('.coursesSlider-js', {
+		grabCursor: true,
 		slidesPerView: 1,
 		loop: true,
 		// autoHeight: true,
@@ -320,7 +338,7 @@ function eventHandler() {
 		//lazy
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 2,
+			loadPrevNextAmount: 4,
 		},
 		navigation: {
 			nextEl: '.coursesSlider-next',
@@ -342,6 +360,7 @@ function eventHandler() {
 	});
 
 	let teachersSlider = new Swiper('.teachersSlider-js', {
+		grabCursor: true,
 		slidesPerView: 1,
 		loop: true,
 		autoHeight: true,
@@ -349,7 +368,7 @@ function eventHandler() {
 		//lazy
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 2,
+			loadPrevNextAmount: 4,
 		},
 		navigation: {
 			nextEl: '.teachersSlider-next',
@@ -362,6 +381,7 @@ function eventHandler() {
 	});
 
 	let achievementsSlider = new Swiper('.achievementsSlider-js', {
+		grabCursor: true,
 		slidesPerView: 1,
 		loop: true,
 		// autoHeight: true,
@@ -369,7 +389,8 @@ function eventHandler() {
 		//lazy
 		lazy: {
 			loadPrevNext: true,
-			loadPrevNextAmount: 2,
+			loadPrevNextAmount: 6,
+			loadOnTransitionStart: true,
 		},
 		navigation: {
 			nextEl: '.achievementsSlider-next',
@@ -394,8 +415,17 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		// loop: true,
 		// autoHeight: true,
-		spaceBetween: 30,
+		freeMode: true,
+		freeModeMomentum: true,
+		spaceBetween: 30, 
+		watchOverflow: true,
+		breakpoints: { 
 
+			992: { 
+				slidesPerView: 3,
+			},
+
+		},
 	});
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {

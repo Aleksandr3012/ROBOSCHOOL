@@ -76,10 +76,10 @@
 	.swiper-slide {
 		width: rem(300);
 		@include media-breakpoint-up(xl) {
-			width: rem(349);
+			width: calc((100% - 30px) / 3);
 		}
 		margin-bottom: rem(10);
-		height: 100%;
+		height: auto;
 	}
 
 	.swiper-container {

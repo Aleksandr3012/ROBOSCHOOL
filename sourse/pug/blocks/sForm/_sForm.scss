@@ -1,9 +1,11 @@
 // start .sForm
 .sForm {
 	
-
+	
 	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(lg) {
+		padding-top: calc(var(--sPT) / 2.2);
+	}
 	@include media-breakpoint-up(md) {}
 	@include media-breakpoint-up(sm) {}
 	@include media-breakpoint-up(xs) {}

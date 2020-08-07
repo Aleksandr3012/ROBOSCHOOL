@@ -18,12 +18,18 @@ mixin sAbout()
 										source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/about-${i}.webp` type="image/webp")
 										img.swiper-lazy(src="#" data-src=`img/@2x/about-${i}.jpg`, alt="")
 					+slide
-						<iframe src="https://www.youtube.com/embed/1il2vq7-KIs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						a(href="https://www.youtube.com/embed/1il2vq7-KIs" data-fancybox="video") link
+							picture
+								source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/about-3.webp` type="image/webp")
+								img.swiper-lazy(src="#" data-src=`img/@2x/about-3.jpg`, alt="")
 					+slide('2')
 					+slide('1')
 					+slide('2')
 					+slide
-						<iframe src="https://www.youtube.com/embed/1il2vq7-KIs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						a(href="https://www.youtube.com/embed/1il2vq7-KIs" data-fancybox="video") link
+							picture
+								source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/about-3.webp` type="image/webp")
+								img.swiper-lazy(src="#" data-src=`img/@2x/about-3.jpg`, alt="")
 					+slide('1')
 				+e.buttons
 					+e.btn(href="#") Посмотреть адреса

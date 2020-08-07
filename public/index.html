@@ -166,7 +166,7 @@
 			<!-- end header-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
-				<div class="container"><a class="link-modal" href="#modal-call"><picture> 
+				<div class="container-fluid"><a class="link-modal" href="#modal-call"><picture> 
 <source srcset="img/@2x/webp/banner.webp" type="image/webp" media="(min-width:576px)">
 <source srcset="img/@2x/webp/banner-mob.webp" type="image/webp">
 <source srcset="img/@2x/banner.jpg" type="image/jpg" media="(min-width:576px)">
@@ -186,7 +186,10 @@
 					<div class="swiper-container sliderAbout-js">
 						<div class="swiper-wrapper">
 									<div class="swiper-slide">
-										<div class="sliderAbout__slide"><iframe src="https://www.youtube.com/embed/1il2vq7-KIs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<div class="sliderAbout__slide"><a href="https://www.youtube.com/embed/1il2vq7-KIs" data-fancybox="video">link
+												<picture>
+													<source class="swiper-lazy" srcset="#" data-srcset="img/@2x/webp/about-3.webp" type="image/webp"/><img class="swiper-lazy" src="#" data-src="img/@2x/about-3.jpg" alt=""/>
+												</picture></a>
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -211,7 +214,10 @@
 										</div>
 									</div>
 									<div class="swiper-slide">
-										<div class="sliderAbout__slide"><iframe src="https://www.youtube.com/embed/1il2vq7-KIs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<div class="sliderAbout__slide"><a href="https://www.youtube.com/embed/1il2vq7-KIs" data-fancybox="video">link
+												<picture>
+													<source class="swiper-lazy" srcset="#" data-srcset="img/@2x/webp/about-3.webp" type="image/webp"/><img class="swiper-lazy" src="#" data-src="img/@2x/about-3.jpg" alt=""/>
+												</picture></a>
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -1090,15 +1096,17 @@
 					<div class="row">
 						<div class="col-sm-7 col-md-4">
 							<div class="footer__title">ООО «Школа Робототехники СПб»
-							</div><a class="footer__vk" href="#">
-							<!-- picture-->
-							<picture class="lazy"> 
-								<source srcset="#" data-srcset="img/@2x/webp/vk.webp" type="image/webp" media="(min-width:576px)"/>
-								<source srcset="#" data-srcset="img/@1x/webp/vk.webp" type="image/webp"/>
-								<source srcset="#" data-srcset="img/@2x/vk.jpg" type="image/jpg" media="(min-width:576px)"/>
-								<source srcset="#" data-srcset="img/@1x/vk.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/vk.jpg" alt=""/>
-							</picture>
-							<!-- /picture--></a>
+							</div>
+							<div class="footer__vk">
+								<!-- picture-->
+								<picture class="lazy"> 
+									<source srcset="#" data-srcset="img/@2x/webp/vk.webp" type="image/webp" media="(min-width:576px)"/>
+									<source srcset="#" data-srcset="img/@1x/webp/vk.webp" type="image/webp"/>
+									<source srcset="#" data-srcset="img/@2x/vk.jpg" type="image/jpg" media="(min-width:576px)"/>
+									<source srcset="#" data-srcset="img/@1x/vk.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/vk.jpg" alt=""/>
+								</picture>
+								<!-- /picture-->
+							</div>
 							<div class="soc"><a class="soc__item" href="#" target="_blank">
 								<svg class="icon icon-fb ">
 									<use xlink:href="img/svg/sprite.svg#fb"></use>
