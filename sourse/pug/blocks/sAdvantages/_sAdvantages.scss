@@ -1,6 +1,54 @@
 
 	// start .sAdvantages
 	.sAdvantages {
+
+		
+		&__item-adv{
+			display: flex;
+			margin-bottom: rem(20);
+		}
+
+		&__img-wrap{
+			display: block;
+			width: rem(63);
+			flex: 0 0 rem(63);
+			text-align: center;
+			margin-right: rem(20);
+			@include media-breakpoint-up(sm) {
+				flex: 0 0 rem(103);
+				width: rem(103);
+			}
+			img{
+				@include media-breakpoint-down(sm) {
+					max-height: rem(71);
+				}
+			}
+		}
+
+		&__title{
+			max-width: rem(333);
+			font-weight: 600;
+			font-size: rem(16);
+			padding-bottom: rem(7);
+			line-height: (25 / 18);
+			color: #1B1B1B;
+			@include media-breakpoint-up(sm) {
+				padding-bottom: rem(4);
+				font-size: rem(18);
+			}
+		}
+
+		&__text{
+			max-width: rem(363);
+			font-size: rem(14);
+			line-height: (19 / 14);
+			@include media-breakpoint-up(sm) {
+				line-height: (22 / 16);
+				font-size: rem(16);
+			}
+		}
+
+
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -23,4 +71,6 @@
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
 
-} // end.sAdvantages
+} // end.sAdvantages\
+
+
